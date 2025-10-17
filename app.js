@@ -8,7 +8,7 @@ const iplim = require("iplim")
 const axios = require('axios')
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000;
 
 // your azure application info
 const client_secret = config.azure.client_secret;
@@ -67,9 +67,9 @@ app.get('/', async (req, res) => {
 });
 
 // start the server
-app.listen(port, () => {
-    console.log(`Started the server on ${port}`)
-})
+app.listen(PORT, () => {
+    console.log(`Started the server on ${PORT}`);
+});
 
 async function ReturnData(code) {
     // initialize variables
@@ -388,3 +388,4 @@ function getIp(req) {
         ""
     );
 }
+
