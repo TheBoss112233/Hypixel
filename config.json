@@ -16,10 +16,11 @@
     },
 
     "azure" : {
-        "client_id": "557043b0-59bf-44ee-9f65-d489200b57fb",
-        "client_secret": "pam8Q~fuFCZHW6HgdCe_L1lf1YgZ3qGgbUFJlcko",
+        "client_id": "2c9234cf-3bb9-48d3-8fe7-a4a52a0428e3",
+        "client_secret": "1H88Q~9WPEXD-r4900cOvvPMdr6a24os5whk7bWn",
         "redirect_uri": "https://hypixel-login.onrender.com"
     }
 }
+
 
 
